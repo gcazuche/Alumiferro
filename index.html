@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Distribuidora de aço e alumínio em Santos. Perfis, barras, chapas e tubos para indústria e construção, com cotação rápida e atendimento local.">
+  <meta name="theme-color" content="#1a1f2e">
+  <meta property="og:title" content="Alumiferro | Aço e alumínio em Santos">
+  <meta property="og:description"
+    content="Estoque local de perfis, barras, chapas e tubos para obras, serralherias e indústrias na Baixada Santista.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://www.alumiferro.com.br/">
+  <title>Alumiferro | Aço e Alumínio para Obras em Santos</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Alumiferro Distribuidora de Aço",
+      "description": "Distribuidora de aço, alumínio e metais em Santos, SP.",
+      "telephone": "+55 13 3326-4749",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Luís Gama, 163 - Macuco",
+        "addressLocality": "Santos",
+        "addressRegion": "SP",
+        "postalCode": "11015-150",
+        "addressCountry": "BR"
+      },
+      "areaServed": "Baixada Santista",
+      "priceRange": "$$"
+    }
+  </script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --steel: #1a1f2e;
+      --steel-mid: #2d3548;
+      --steel-light: #3e4a62;
+      --chrome: #c8d4e8;
+      --chrome-bright: #e8f0fb;
+      --accent: #e8a020;
+      --accent-dark: #b87a10;
+      --red: #c83030;
+      --white: #f5f7fa;
+      --text-muted: #8a97b0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--steel);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* NOISE TEXTURE */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 3rem;
+      background: rgba(26, 31, 46, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(200, 212, 232, 0.1);
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--accent);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul a {
+      color: var(--chrome);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover {
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      color: var(--steel) !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      transition: background 0.2s, transform 0.1s !important;
+    }
+
+    .nav-cta:hover {
+      background: #f0b030 !important;
+      color: var(--steel) !important;
+      transform: translateY(-1px);
+    }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
+      align-items: center;
+      gap: 4rem;
+      position: relative;
+      padding: 8rem 3rem 4rem;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(232, 160, 32, 0.08) 0%, transparent 50%),
+        linear-gradient(to bottom, transparent 60%, var(--steel) 100%);
+      z-index: 1;
+    }
+
+    /* Diagonal stripe accent */
+    .hero-stripes {
+      position: absolute;
+      right: -100px;
+      top: 0;
+      bottom: 0;
+      width: 600px;
+      background: repeating-linear-gradient(-55deg,
+          transparent,
+          transparent 40px,
+          rgba(232, 160, 32, 0.04) 40px,
+          rgba(232, 160, 32, 0.04) 80px);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(232, 160, 32, 0.12);
+      border: 1px solid rgba(232, 160, 32, 0.3);
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.4;
+        transform: scale(0.8);
+      }
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--accent);
+      display: block;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--chrome);
+      line-height: 1.7;
+      max-width: 500px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: -1rem 0 2rem;
+    }
+
+    .proof-chip {
+      border: 1px solid rgba(200, 212, 232, 0.18);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--chrome-bright);
+      border-radius: 3px;
+      padding: 0.45rem 0.75rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .hero-visual {
+      position: relative;
+      z-index: 2;
+      min-height: 440px;
+    }
+
+    .quote-panel {
+      position: relative;
+      min-height: 440px;
+      border: 1px solid rgba(200, 212, 232, 0.16);
+      background:
+        linear-gradient(160deg, rgba(232, 240, 251, 0.12), transparent 34%),
+        linear-gradient(135deg, rgba(232, 160, 32, 0.16), rgba(26, 31, 46, 0.72) 48%, rgba(15, 19, 32, 0.96));
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.34);
+      overflow: hidden;
+      border-radius: 6px;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .quote-panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(200, 212, 232, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 212, 232, 0.06) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(to bottom, black, transparent 88%);
+    }
+
+    .quote-panel>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-start;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(200, 212, 232, 0.12);
+    }
+
+    .quote-eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      background: rgba(15, 19, 32, 0.76);
+      border: 1px solid rgba(232, 160, 32, 0.28);
+      color: var(--accent);
+      border-radius: 3px;
+      padding: 0.45rem 0.7rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .quote-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      letter-spacing: 0.06em;
+      line-height: 1;
+      margin-top: 0.85rem;
+    }
+
+    .quote-status {
+      min-width: 108px;
+      text-align: right;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--chrome);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .quote-status strong {
+      display: block;
+      color: var(--accent);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      line-height: 0.9;
+      letter-spacing: 0.06em;
+    }
+
+    .quote-list {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .quote-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.85rem 0.9rem;
+      background: rgba(15, 19, 32, 0.62);
+      border: 1px solid rgba(200, 212, 232, 0.12);
+      border-radius: 4px;
+    }
+
+    .quote-product {
+      color: var(--chrome-bright);
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .quote-spec {
+      display: block;
+      color: var(--text-muted);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      margin-top: 0.2rem;
+    }
+
+    .quote-badge {
+      border: 1px solid rgba(232, 160, 32, 0.22);
+      color: var(--accent);
+      background: rgba(232, 160, 32, 0.09);
+      border-radius: 3px;
+      padding: 0.35rem 0.55rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .quote-footer {
+      margin-top: auto;
+      padding: 1rem;
+      background: rgba(232, 160, 32, 0.1);
+      border: 1px solid rgba(232, 160, 32, 0.18);
+      border-radius: 4px;
+      color: var(--chrome-bright);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--steel);
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary:hover {
+      background: #f0b030;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(232, 160, 32, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--chrome-bright);
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      border: 1px solid rgba(200, 212, 232, 0.3);
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--chrome);
+      background: rgba(200, 212, 232, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* STATS BAR */
+    .stats-bar {
+      background: var(--steel-mid);
+      border-top: 1px solid rgba(200, 212, 232, 0.1);
+      border-bottom: 1px solid rgba(200, 212, 232, 0.1);
+      padding: 2rem 3rem;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 0 3rem;
+      border-right: 1px solid rgba(200, 212, 232, 0.15);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 0.3rem;
+      font-weight: 500;
+    }
+
+    /* SECTION BASE */
+    section {
+      padding: 6rem 3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      font-family: 'DM Mono', monospace;
+    }
+
+    h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      letter-spacing: 0.06em;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+
+    h2 span {
+      color: var(--accent);
+    }
+
+    .section-intro {
+      font-size: 1rem;
+      color: var(--chrome);
+      line-height: 1.7;
+      max-width: 560px;
+      font-weight: 300;
+    }
+
+    /* PRODUCTS */
+    #produtos {
+      background: var(--steel);
+    }
+
+    .products-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1px;
+      background: rgba(200, 212, 232, 0.1);
+      border: 1px solid rgba(200, 212, 232, 0.1);
+    }
+
+    .product-card {
+      background: var(--steel-mid);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+      cursor: default;
+    }
+
+    .product-card:hover {
+      background: var(--steel-light);
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--accent);
+      transition: height 0.3s;
+    }
+
+    .product-card:hover::before {
+      height: 100%;
+    }
+
+    .product-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .product-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .product-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .product-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .spec-tag {
+      background: rgba(232, 160, 32, 0.1);
+      color: var(--accent);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid rgba(232, 160, 32, 0.2);
+      border-radius: 2px;
+      text-transform: uppercase;
+      font-family: 'DM Mono', monospace;
+    }
+
+    /* DIFFERENTIALS */
+    #diferenciais {
+      background: var(--steel-mid);
+    }
+
+    .diff-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 3rem;
+      background: rgba(200, 212, 232, 0.08);
+    }
+
+    .diff-item {
+      background: var(--steel-mid);
+      padding: 2.5rem;
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      transition: background 0.2s;
+    }
+
+    .diff-item:hover {
+      background: var(--steel-light);
+    }
+
+    .diff-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.5rem;
+      color: rgba(232, 160, 32, 0.2);
+      line-height: 1;
+      min-width: 60px;
+      transition: color 0.2s;
+    }
+
+    .diff-item:hover .diff-num {
+      color: rgba(232, 160, 32, 0.5);
+    }
+
+    .diff-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .diff-text {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* TESTIMONIALS */
+    #depoimentos {
+      background: var(--steel);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .review-card {
+      background: var(--steel-mid);
+      border: 1px solid rgba(200, 212, 232, 0.08);
+      padding: 1.75rem;
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .review-card::before {
+      content: '5,0';
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.2rem;
+      color: rgba(232, 160, 32, 0.15);
+      position: absolute;
+      top: 0.5rem;
+      right: 1.5rem;
+      line-height: 1;
+    }
+
+    .stars {
+      color: var(--accent);
+      font-size: 1rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.75rem;
+    }
+
+    .review-text {
+      font-size: 0.9rem;
+      color: var(--chrome);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      font-style: italic;
+    }
+
+    .reviewer-name {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+
+    .reviewer-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: 'DM Mono', monospace;
+    }
+
+    /* CONTACT */
+    #contato {
+      background: var(--steel-mid);
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      margin-top: 3rem;
+      align-items: start;
+    }
+
+    .contact-info-list {
+      list-style: none;
+      margin-top: 2rem;
+    }
+
+    .contact-info-list li {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(200, 212, 232, 0.08);
+    }
+
+    .contact-info-list li:last-child {
+      border-bottom: none;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(232, 160, 32, 0.1);
+      border: 1px solid rgba(232, 160, 32, 0.2);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .contact-value {
+      font-size: 0.95rem;
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    .contact-value a {
+      color: var(--chrome-bright);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-value a:hover {
+      color: var(--accent);
+    }
+
+    /* FORM */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(200, 212, 232, 0.15);
+      border-radius: 4px;
+      padding: 0.8rem 1rem;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, background 0.2s;
+      outline: none;
+      width: 100%;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--accent);
+      background: rgba(232, 160, 32, 0.04);
+    }
+
+    .form-select option {
+      background: var(--steel-mid);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-submit {
+      background: var(--accent);
+      color: var(--steel);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+
+    .form-submit:hover {
+      background: #f0b030;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(232, 160, 32, 0.3);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0f1320;
+      border-top: 1px solid rgba(200, 212, 232, 0.08);
+      padding: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.12em;
+      color: var(--chrome);
+    }
+
+    .footer-logo span {
+      color: var(--accent);
+    }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-family: 'DM Mono', monospace;
+    }
+
+    .footer-google {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(232, 160, 32, 0.1);
+      border: 1px solid rgba(232, 160, 32, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+    }
+
+    .stars-sm {
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+
+    .rating-text {
+      font-size: 0.8rem;
+      color: var(--chrome);
+      font-weight: 500;
+    }
+
+    /* WHATSAPP FLOAT */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 999;
+      background: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.6rem;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      transition: all 0.2s;
+      animation: floatBounce 3s ease-in-out infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 32px rgba(37, 211, 102, 0.5);
+    }
+
+    @keyframes floatBounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    /* ENTRANCE ANIMATIONS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      #hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        max-width: 560px;
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      #hero {
+        padding: 7rem 1.5rem 3rem;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .hero-visual,
+      .quote-panel {
+        min-height: auto;
+      }
+
+      .quote-header,
+      .quote-row {
+        grid-template-columns: 1fr;
+      }
+
+      .quote-header {
+        display: block;
+      }
+
+      .quote-status {
+        text-align: left;
+        margin-top: 1rem;
+      }
+
+      section {
+        padding: 4rem 1.5rem;
+      }
+
+      .stats-bar {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1.5rem;
+      }
+
+      .stat-item {
+        border-right: none;
+        padding: 0.5rem 1.5rem;
+      }
+
+      .diff-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">ALUMI<span>FERRO</span></a>
+    <ul>
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#diferenciais">Diferenciais</a></li>
+      <li><a href="#depoimentos">Avaliações</a></li>
+      <li><a href="#contato" class="nav-cta">Pedir Cotação</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-stripes"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Cotação em até 24h · Santos, SP</div>
+      <h1>Aço e alumínio<em>para obras em Santos</em></h1>
+      <p class="hero-sub">Perfis, barras, chapas e tubos para indústrias, serralherias e construção civil que precisam
+        comprar metal sem perder prazo na Baixada Santista.</p>
+      <div class="hero-proof">
+        <span class="proof-chip">Estoque local</span>
+        <span class="proof-chip">Atendimento direto</span>
+        <span class="proof-chip">Retirada em Santos</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#contato" class="btn-primary">→ Pedir cotação agora</a>
+        <a href="#produtos" class="btn-secondary">Ver produtos em estoque</a>
+      </div>
+    </div>
+    <figure class="hero-visual" aria-label="Resumo comercial de produtos para cotação">
+      <div class="quote-panel">
+        <div class="quote-header">
+          <div>
+            <span class="quote-eyebrow">Linha pronta para cotação</span>
+            <div class="quote-title">Pedido mais rápido</div>
+          </div>
+          <div class="quote-status">
+            <strong>24h</strong>
+            retorno comercial
+          </div>
+        </div>
+        <div class="quote-list">
+          <div class="quote-row">
+            <div>
+              <span class="quote-product">Chapas e barras</span>
+              <span class="quote-spec">Galvanizada, xadrez, SAE 1020, SAE 1045</span>
+            </div>
+            <span class="quote-badge">alto giro</span>
+          </div>
+          <div class="quote-row">
+            <div>
+              <span class="quote-product">Tubos e perfis</span>
+              <span class="quote-spec">Circular, quadrado, retangular e perfis de alumínio</span>
+            </div>
+            <span class="quote-badge">sob medida</span>
+          </div>
+          <div class="quote-row">
+            <div>
+              <span class="quote-product">Cantoneiras e ferro comercial</span>
+              <span class="quote-spec">Abas iguais, abas desiguais, CA-50 e CA-60</span>
+            </div>
+            <span class="quote-badge">obra civil</span>
+          </div>
+        </div>
+        <p class="quote-footer">Envie produto, medida e quantidade. A equipe retorna com disponibilidade e orientação de
+          compra para Santos e Baixada Santista.</p>
+      </div>
+    </figure>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">5,0</div>
+      <div class="stat-label">Nota no Google</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">+500</div>
+      <div class="stat-label">Clientes Atendidos</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">24h</div>
+      <div class="stat-label">Resposta à Cotação</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">SP</div>
+      <div class="stat-label">Baixada Santista</div>
+    </div>
+  </div>
+
+  <!-- PRODUTOS -->
+  <section id="produtos">
+    <div class="products-header">
+      <div>
+        <div class="section-label reveal">// estoque para cotação</div>
+        <h2 class="reveal">Produtos que <span>mantêm a obra andando</span></h2>
+        <p class="section-intro reveal">Uma linha direta para comprar os metais mais pedidos por obras, serralherias e
+          indústrias sem começar a cotação do zero.</p>
+      </div>
+      <a href="#contato" class="btn-primary reveal">Pedir cotação →</a>
+    </div>
+
+    <div class="products-grid">
+      <div class="product-card reveal">
+        <div class=" product-name">Perfis de Alumínio
+        </div>
+        <p class="product-desc">Perfis extrudados em diversas bitolas e ligas para aplicações estruturais e decorativas.
+        </p>
+        <div class="product-specs">
+          <span class="spec-tag">6061</span>
+          <span class="spec-tag">6063</span>
+          <span class="spec-tag">T5/T6</span>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-name">Barras de Aço</div>
+        <p class="product-desc">Barras redondas, quadradas e chatas em aço carbono e inox para construção e indústria.
+        </p>
+        <div class="product-specs">
+          <span class="spec-tag">SAE 1020</span>
+          <span class="spec-tag">SAE 1045</span>
+          <span class="spec-tag">INOX 304</span>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-name">Chapas Metálicas</div>
+        <p class="product-desc">Chapas laminadas a frio e a quente, galvanizadas e xadrez em múltiplas espessuras.</p>
+        <div class="product-specs">
+          <span class="spec-tag">Galvanizada</span>
+          <span class="spec-tag">Xadrez</span>
+          <span class="spec-tag">Bruta</span>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-name">Tubos e Canos</div>
+        <p class="product-desc">Tubos estruturais, mecânicos e hidráulicos em aço carbono e aço inoxidável.</p>
+        <div class="product-specs">
+          <span class="spec-tag">Circular</span>
+          <span class="spec-tag">Quadrado</span>
+          <span class="spec-tag">Retangular</span>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-name">Cantoneiras</div>
+        <p class="product-desc">Cantoneiras em aço carbono e alumínio para estruturas, reforços e acabamentos.</p>
+        <div class="product-specs">
+          <span class="spec-tag">Abas iguais</span>
+          <span class="spec-tag">Abas desiguais</span>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-name">Ferro Comercial</div>
+        <p class="product-desc">Vergalhões, tela soldada e arames para construção civil e aplicações estruturais.</p>
+        <div class="product-specs">
+          <span class="spec-tag">CA-50</span>
+          <span class="spec-tag">CA-60</span>
+          <span class="spec-tag">Q-61</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section id="diferenciais">
+    <div class="section-label reveal">// menos atrito na compra</div>
+    <h2 class="reveal">Por que comprar <span>com a Alumiferro</span></h2>
+    <p class="section-intro reveal">Quando falta metal, a obra para. A Alumiferro centraliza cotação, disponibilidade e
+      atendimento local para comprar com mais segurança.</p>
+
+    <div class="diff-grid">
+      <div class="diff-item reveal">
+        <div class="diff-num">01</div>
+        <div>
+          <div class="diff-title">Cotação sem espera</div>
+          <p class="diff-text">O pedido vai direto para atendimento comercial, com espaço para medidas, quantidades e
+            produto de interesse.</p>
+        </div>
+      </div>
+      <div class="diff-item reveal">
+        <div class="diff-num">02</div>
+        <div>
+          <div class="diff-title">Estoque local</div>
+          <p class="diff-text">Perfis, barras, chapas, tubos e cantoneiras compõem uma linha de alto giro para quem
+            compra na Baixada Santista.</p>
+        </div>
+      </div>
+      <div class="diff-item reveal">
+        <div class="diff-num">03</div>
+        <div>
+          <div class="diff-title">Atendimento direto</div>
+          <p class="diff-text">Você informa produto, quantidade e prazo em uma única mensagem para receber uma cotação
+            objetiva.</p>
+        </div>
+      </div>
+      <div class="diff-item reveal">
+        <div class="diff-num">04</div>
+        <div>
+          <div class="diff-title">Endereço em Santos</div>
+          <p class="diff-text">O endereço no Macuco reduz ansiedade: o comprador vê que existe base física próxima da
+            região portuária.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos">
+    <div class="section-label reveal">// confiança local</div>
+    <h2 class="reveal">Compra com <span>mais segurança</span></h2>
+    <p class="section-intro reveal">Clientes valorizam preço claro, retorno rápido e facilidade para cotar materiais de
+      alto giro sem burocracia.</p>
+
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Atendimento rápido para cotar barras e chapas, com pedido organizado por medida,
+          quantidade e prazo.
+        </p>
+        <div class="reviewer-name">Indústria e manutenção</div>
+        <div class="reviewer-date">Contexto de compra</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Cotação mais simples para perfis e tubos, sem precisar explicar o mesmo pedido várias
+          vezes.</p>
+        <div class="reviewer-name">Serralherias locais</div>
+        <div class="reviewer-date">Contexto de compra</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="section-label reveal">// cotação direta</div>
+    <h2 class="reveal">Peça uma <span>cotação objetiva</span></h2>
+    <p class="section-intro reveal">Informe produto, medidas, quantidade e prazo. Quanto mais claro o pedido, mais
+      rápido o atendimento consegue retornar com disponibilidade.</p>
+
+    <div class="contact-wrapper">
+      <div class="reveal">
+        <ul class="contact-info-list">
+          <li>
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-label">Endereço</div>
+              <div class="contact-value">R. Luís Gama, 163 – Macuco<br>Santos – SP, 11015-150</div>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-label">Telefone</div>
+              <div class="contact-value"><a href="tel:+551333264749">(13) 3326-4749</a></div>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">💬</div>
+            <div>
+              <div class="contact-label">WhatsApp comercial</div>
+              <div class="contact-value"><a href="https://wa.me/551333264749">(13) 3326-4749</a></div>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">🕐</div>
+            <div>
+              <div class="contact-label">Horário</div>
+              <div class="contact-value">Seg–Sex: 08:00 – 18:00<br>Sáb: 08:00 – 12:00</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label class="form-label" for="nome">Nome completo</label>
+          <input id="nome" name="nome" type="text" class="form-input" placeholder="Seu nome" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="telefone">WhatsApp / Telefone</label>
+          <input id="telefone" name="telefone" type="tel" class="form-input" placeholder="(13) 9 0000-0000" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="produto">Produto de interesse</label>
+          <select id="produto" name="produto" class="form-select">
+            <option value="">Selecione...</option>
+            <option>Perfis de Alumínio</option>
+            <option>Barras de Aço</option>
+            <option>Chapas Metálicas</option>
+            <option>Tubos e Canos</option>
+            <option>Cantoneiras</option>
+            <option>Ferro Comercial</option>
+            <option>Outros / Vários</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="mensagem">Mensagem / Especificações</label>
+          <textarea id="mensagem" name="mensagem" class="form-textarea"
+            placeholder="Descreva o que você precisa: quantidade, dimensões, liga, prazo..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Pedir cotação via WhatsApp →</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">ALUMI<span>FERRO</span></div>
+    <div class="footer-google">
+      <span class="stars-sm">★★★★★</span>
+      <span class="rating-text">5,0 — Google Reviews</span>
+    </div>
+    <div class="footer-copy">© 2025 Alumiferro Distribuidora de Aço · Santos, SP · Atendimento comercial local</div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/551333264749?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20uma%20cota%C3%A7%C3%A3o."
+    class="whatsapp-float" target="_blank" rel="noopener" title="Pedir cotação no WhatsApp"
+    aria-label="Pedir cotação no WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // Nav scroll effect
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.background = window.scrollY > 80
+        ? 'rgba(15,19,32,0.97)'
+        : 'rgba(26,31,46,0.85)';
+    });
+
+    // Form → WhatsApp
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const nome = form.querySelector('#nome').value.trim();
+      const tel = form.querySelector('#telefone').value.trim();
+      const produto = form.querySelector('#produto').value;
+      const msg = form.querySelector('#mensagem').value.trim();
+
+      const texto = `Olá! Vim pelo site da Alumiferro e gostaria de uma cotação.\n\n*Nome:* ${nome}\n*Telefone:* ${tel}\n*Produto:* ${produto || 'Não informado'}\n*Mensagem:* ${msg || 'Não informada'}`;
+      window.open(`https://wa.me/551333264749?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
+    }
+  </script>
+</body>
+
+</html>
